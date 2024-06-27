@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.contrib.auth import views 
 from django_registration.backends.one_step.views import RegistrationView
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +31,6 @@ urlpatterns = [
     path('accounts/', include('django_registration.backends.one_step.urls')),
 
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
